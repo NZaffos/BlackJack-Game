@@ -1218,6 +1218,13 @@ void Screens::onPressMainMenuButton()
 {
     resetEverything();
     moveToStartScreen();
+
+    // if the scene is active/valid
+    if (m_scene) {
+        m_scene->stopSpawning();
+        m_scene->clearCoins();
+        m_scene->update();
+    }
 }
 
 void Screens::onPressPlayAgain()

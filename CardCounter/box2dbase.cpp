@@ -19,6 +19,14 @@ box2Dbase::box2Dbase(QObject *parent) : QGraphicsScene{parent},
 
     setBackgroundBrush(Qt::transparent);
 
+    QMediaPlayer *jackpotNoise = new QMediaPlayer(this);
+    QAudioOutput *audioOutput = new QAudioOutput(this);
+
+    jackpotNoise->setAudioOutput(audioOutput);
+    jackpotNoise->setSource(QUrl("qrc::/sounds/otherimg/jackpot.mp3"));
+
+    audioOutput->setVolume(30);  // 0-100
+
     // Set graphics scene size to match physics world
     setSceneRect(0, 0, WORLD_WIDTH * pixels_PerMeter, WORLD_HEIGHT * pixels_PerMeter);
 
@@ -99,6 +107,8 @@ void box2Dbase::onWinSpawnCoins(QPointF position, int coinsToSpawn) {
 
     if (!m_coinTimer->isActive()) {
         m_coinTimer->start(100); // slightly slower for visibility
+
+        jackpotNoise->play();
     }
 
 }

@@ -11,6 +11,8 @@
 #include <QPixmap>
 #include <QGraphicsPixmapItem>
 #include <QQueue>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 
 /**
  * @brief The box2Dbase class that includes all logic for creating coin objects that simulate physics such as collisions and weights
@@ -143,6 +145,10 @@ private:
      * @brief m_coinsPerSecond Adjusts spawn rate
      */
     int m_coinsPerSecond = 10;
+
+    QMediaPlayer *jackpotNoise;
+    QAudioOutput *audioOutput;
+
 
 signals:
 
