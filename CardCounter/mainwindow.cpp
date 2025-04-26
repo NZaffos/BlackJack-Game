@@ -41,7 +41,8 @@ void MainWindow::setupCoinAnimViews()
     ui->coinAnimView->setRenderHint(QPainter::Antialiasing);
 
     ui->coinAnimView->setSceneRect(m_scene->sceneRect());
-    ui->coinAnimView->setFixedSize(1181, 621); // Match the UI geometry
+    // Match the UI geometry
+    ui->coinAnimView->setFixedSize(1181, 621);
     ui->coinAnimView->fitInView(m_scene->sceneRect(), Qt::KeepAspectRatioByExpanding);
 }
 
