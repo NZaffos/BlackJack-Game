@@ -696,8 +696,99 @@ void Screens::setUpBasicStrategyCharts()
     ui->basicStrategyChart->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->basicStrategyChart->setStyleSheet(QGraphicsViewStyle);
 
-    // Set up for the textBrowser
+    // Set up for player hand example picture
+    QPixmap playerHandPixmap(":/StrategyCharts/playerhandexample.png");
+    QGraphicsPixmapItem *playerHandItem = new QGraphicsPixmapItem(playerHandPixmap);
+    QGraphicsScene* playerHandScene = new QGraphicsScene(this);
+    playerHandScene->addItem(playerHandItem);
+    playerHandScene->setSceneRect(playerHandItem->sceneBoundingRect());
+    ui->playerHandEgPic->setScene(playerHandScene);
+    ui->playerHandEgPic->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->playerHandEgPic->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->playerHandEgPic->setStyleSheet(QGraphicsViewStyle);
+
+    QPixmap playerStrategyPixmap(":/StrategyCharts/BasicStrategyCharts_playerHand.png"); // Update path
+    QGraphicsPixmapItem *playerStrategyItem = new QGraphicsPixmapItem(playerStrategyPixmap);
+    QGraphicsScene* playerStrategyScene = new QGraphicsScene(this);
+    playerStrategyScene->addItem(playerStrategyItem);
+    playerStrategyScene->setSceneRect(playerStrategyItem->sceneBoundingRect());
+    ui->playerStrategyPic->setScene(playerStrategyScene);
+    ui->playerStrategyPic->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->playerStrategyPic->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->playerStrategyPic->setStyleSheet(QGraphicsViewStyle);
+
+    QPixmap dealerhandPixmap(":/StrategyCharts/dealerhandexample.png"); // Update path
+    QGraphicsPixmapItem *dealerhandItem = new QGraphicsPixmapItem(dealerhandPixmap);
+    QGraphicsScene* dealerhandScene = new QGraphicsScene(this);
+    dealerhandScene->addItem(dealerhandItem);
+    dealerhandScene->setSceneRect(dealerhandItem->sceneBoundingRect());
+    ui->dealershandeg->setScene(dealerhandScene);
+    ui->dealershandeg->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->dealershandeg->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->dealershandeg->setStyleSheet(QGraphicsViewStyle);
+
+    QPixmap dealerupperPixmap(":/StrategyCharts/example1.png"); // Update path
+    QGraphicsPixmapItem *dealerupperItem = new QGraphicsPixmapItem(dealerupperPixmap);
+    QGraphicsScene* dealerupperScene = new QGraphicsScene(this);
+    dealerupperScene->addItem(dealerupperItem);
+    dealerupperScene->setSceneRect(dealerupperItem->sceneBoundingRect());
+    ui->dealersupperpic->setScene(dealerupperScene);
+    ui->dealersupperpic->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->dealersupperpic->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->dealersupperpic->setStyleSheet(QGraphicsViewStyle);
+
+    QPixmap example1Pixmap(":/StrategyCharts/example1.png"); // Update path
+    QGraphicsPixmapItem *example1Item = new QGraphicsPixmapItem(example1Pixmap);
+    QGraphicsScene* example1Scene = new QGraphicsScene(this);
+    example1Scene->addItem(example1Item);
+    example1Scene->setSceneRect(example1Item->sceneBoundingRect());
+    ui->example1->setScene(example1Scene);
+    ui->example1->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->example1->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->example1->setStyleSheet(QGraphicsViewStyle);
+
+    QPixmap example2Pixmap(":/StrategyCharts/example2.png"); // Update path
+    QGraphicsPixmapItem *example2Item = new QGraphicsPixmapItem(example2Pixmap);
+    QGraphicsScene* example2Scene = new QGraphicsScene(this);
+    example2Scene->addItem(example2Item);
+    example2Scene->setSceneRect(example2Item->sceneBoundingRect());
+    ui->example2->setScene(example2Scene);
+    ui->example2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->example2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->example2->setStyleSheet(QGraphicsViewStyle);
+
+    QPixmap example3Pixmap(":/StrategyCharts/example3.png"); // Update path
+    QGraphicsPixmapItem *example3Item = new QGraphicsPixmapItem(example3Pixmap);
+    QGraphicsScene* example3Scene = new QGraphicsScene(this);
+    example3Scene->addItem(example3Item);
+    example3Scene->setSceneRect(example3Item->sceneBoundingRect());
+    ui->example3->setScene(example3Scene);
+    ui->example3->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->example3->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->example3->setStyleSheet(QGraphicsViewStyle);
+
+    //Set up for the textBrowser
     ui->infoTextBrowser->setStyleSheet(QTextBrowserStyle);
+    ui->infoTextBrowser_2->setStyleSheet(QTextBrowserStyle);
+    ui->infoTextBrowser_3->setStyleSheet(QTextBrowserStyle);
+    ui->infoTextBrowser_4->setStyleSheet(QTextBrowserStyle);
+
+    ui->charttabs->setStyleSheet(
+        "QTabWidget::pane {"
+        "   border: none;"
+        "   background: rgba(50, 25, 20, 220);"
+        "}"
+        "QTabBar::tab {"
+        "   background: rgba(70, 35, 30, 180);"
+        "   color: white;"
+        "   padding: 8px;"
+        "   border: none;"
+        "}"
+        "QTabBar::tab:selected {"
+        "   background: rgba(90, 45, 40, 220);"
+        "}"
+        );
+    ui->charttabs->setDocumentMode(true);
 }
 
 void Screens::onPressHitButton()

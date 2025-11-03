@@ -66,5 +66,11 @@
     </qresource>
     <qresource prefix="/StrategyCharts">
         <file>BasicStrategyCharts.png</file>
+        <file>BasicStrategyCharts_playerHand.png</file>
+        <file>playerhandexample.png</file>
+        <file>dealerhandexample.png</file>
+        <file>example1.png</file>
+        <file>example2.png</file>
+        <file>example3.png</file>
     </qresource>
 </RCC>
